@@ -1,4 +1,4 @@
-# checkio --domain=py run all-the-same
+#!/usr/bin/env checkio --domain=py run all-the-same
 
 # In this mission you should check if all elements in the given list are equal.
 # 
@@ -17,9 +17,9 @@ from typing import List, Any
 
 
 def all_the_same(elements: List[Any]) -> bool:
-    #Remove all repeted elements
-    #If elements size is 0 then all elements are equals
-    return len(set(elements)) <= 1
+    #Remove the duplicated elements
+    #If the elements dize <= 1 then return true
+    return len(set(elements)) <=1
 
 
 if __name__ == '__main__':
