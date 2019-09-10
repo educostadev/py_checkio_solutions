@@ -15,10 +15,10 @@
 #
 #
 # END_DESC
-#
+
 # Input: A text with letters, symbols and whitespaces.
 # Output: The most frequent letter in lower case OR the letters tha comes first in the alphabet in case of the same frequency.
-# Constraints:
+# Constraints: Not check symbols, whitespaces and pontuction
 
 
 def checkio(text: str) -> str:
@@ -54,7 +54,8 @@ def checkio(text: str) -> str:
             letter = letter.lower()
             frequency = frequencyTable.get(letter)
             if frequency:
-                frequencyTable[letter] = frequency+1
+                frequency += frequency
+                frequencyTable[letter] = frequency
                 mFrequency = frequencyTable[mostFrequentyLetter]
                 if (frequency > mFrequency):
                     mostFrequentyLetter = letter
@@ -72,13 +73,16 @@ def checkio(text: str) -> str:
     return mostFrequentyLetter
 
 
+
 def isLetter(letter):
-    return (letter.isalpha() or letter.isnumeric()) and not letter.isspace()
+    return letter.isalpha() and not letter.isnumeric() and not letter.isspace()
 
 
 if __name__ == '__main__':
     print("Example:")
-    print(checkio("Hello World!"))
+    value = "oemmoom"
+    print(checkio(value))
+    assert checkio(value) == "m", ""
 
     # These "asserts" using only for self-checking and not necessary for auto-testing
     assert checkio("Hello World!") == "l", "Hello test"
