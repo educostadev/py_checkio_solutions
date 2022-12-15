@@ -1,4 +1,4 @@
-#!/usr/bin/env checkio --domain=py run absolute-sorting
+#!/usr/bin/env checkio  --domain=py run absolute-sorting
 
 # Let's try some sorting. Here is an array with the specific rules.
 # 
